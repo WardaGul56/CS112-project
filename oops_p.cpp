@@ -7,13 +7,13 @@ public:
 	Human()
 	{
     int c;
-    cout<< "You open your eyes startles by the sound of something squeking....."<< endl 
+    cout<< "You open your eyes startles by the sound of something squeaking....."<< endl 
 	    <<"its dark you can't properly distinguish the figure of something small..."<< endl 
-		<<"as your eyes ajdust its a small mouse."<< endl 
+		<<"as your eyes adjust its a small mouse."<< endl 
 		<<"You let out a sign of relief but that is short lived as you notice its no ordinary mouse but a demonic one with vicious big claws and red eyes."<< endl 
 		<<"You see a stick to your right.Instinctively you know you need to think quickly or you are a goner."
         <<"You need to choose between the two choices : "<< endl 
-	    <<"1) kill the mouse with the stick."<< endl 
+	    <<"1) Kill the mouse with the stick."<< endl 
 	    <<"2)Run away."<<endl;
     
     cin>>c;
