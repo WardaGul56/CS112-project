@@ -3,13 +3,20 @@ using namespace std;
 
 class Human
 {
-public:
-	Human()
+ private:
+	string name;	
+ public:
+ 
+ 	Human (string n) : name(n) { }
+ 	
+ 	void set_name (string n) { name=n; }
+ 	string get_name () { return name; }
+	void play()
 	{
     int c;
-    cout<< "You open your eyes startles by the sound of something squeaking....."<< endl 
+    cout<< "You open your eyes startled by the sound of something squeaking....."<< endl 
 	    <<"its dark you can't properly distinguish the figure of something small..."<< endl 
-		<<"as your eyes adjust its a small mouse."<< endl 
+		<<"as your eyes adjust you realize its a small mouse."<< endl 
 		<<"You let out a sign of relief but that is short lived as you notice its no ordinary mouse but a demonic one with vicious big claws and red eyes."<< endl 
 		<<"You see a stick to your right.Instinctively you know you need to think quickly or you are a goner."
         <<"You need to choose between the two choices : "<< endl 
@@ -40,6 +47,14 @@ public:
 
 int main()
 {
-	Human h1;
+    string name;
+    cout<<"Player please enter you name :"<<endl;
+    getline(cin,name);
+    Human h1(name);
+
+    cout<<"HELLOOOO "<< h1.get_name() <<"!! The demon king has taken over the kingdom of Avalon .The world has become infested with his minions and demon folk who raom everywhere wreaking havoc and killing everyone."
+        <<endl<<"______________________________"
+        <<endl<<"You are an ordinary human on a quest to save your kingdom from these evil forces ......good luck on your journey. Sayonara "
+        <<endl<<"______________________________";
 	return 0;
 }
