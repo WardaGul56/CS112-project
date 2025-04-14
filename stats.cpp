@@ -3,6 +3,7 @@ class stats
     private:
       int current_hp;
       int damage;
+      int mana;
 
     public:
       stats ( int chp , int d)
@@ -28,9 +29,17 @@ class stats
         current_hp = current_hp - d_hp;
       }
 
+
       void set_damage ( int d ) { damage = d; }
       int get_damage ()  {return damage ; }
 
       int increase_damage (int inc_d)  { damage = damage + inc_d; }
       int decrease_damage (int dec_d)  { damage = damage - dec_d; }
+
+     void set_Mana(int mana)  {this->mana=mana;}
+
+    int get_mana() { return mana;}
+
+    int increase_mana (int m) {mana = mana + m ;}
+    int decrease_mana (int m) {mana = mana - m ;}
 };
