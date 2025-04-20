@@ -19,13 +19,13 @@ bool MG1(){
     cin>>m1;
     cout<<endl;
 
-    cout<< "Pony is going to match with??" <<endl;
-    cin>>p1;
-    cout<<endl;
-
 
     cout<< "Rabbit is going to match with??" <<endl;
     cin>>r1;
+    cout<<endl;
+
+    cout<< "Pony is going to match with??" <<endl;
+    cin>>p1;
     cout<<endl;
 
     if ((m1== "Banana" || m1 == "banana") && (r1== "Carrot" || r1== "carrot") && (p1== "Apple" || p1== "apple")){
