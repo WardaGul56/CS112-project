@@ -313,8 +313,16 @@ void Stage2(int choice, elf &e1) // Stage 2 In Function
 
                  if(choice == 1){
 
-                    cout << "   " << endl;
-                    waitForEnter();
+                        cout << "AND HERE COMES THE FINAL SHOT!" << endl;
+                        waitForEnter();
+
+                        goblinKing.setHealth(goblinKing.getHealth() - e1.tripple_arrows());
+                        cout << "Goblin King's Health: " << goblinKing.getHealth() << endl;
+                        waitForEnter();
+
+                        cout << "\033[1;32m";
+                        cout << "GOBLIN KING DEFEATED!" << endl;
+                        cout << "\033[0m";
 
                  }
 
