@@ -32,42 +32,44 @@ public:
     }
 };
 
-class Stat
+class Stats
 {
-private:
+    private:
     int health;
     int damage;
 
 public:
-    Stat(int h, int d)
-    {
+    Stats(int h, int d) {
         health = h;
         damage = d;
     }
 
-    int getHealth()
-    {
+    int getHealth() {
         return health;
     }
 
-    int getDamage()
-    {
+    int getDamage() {
         return damage;
     }
 
-    void setHealth(int h)
-    {
+    void getDamage(int multiplier) {
+        damage = damage * multiplier;
+    }
+
+    void setHealth(int h) {
         health = h;
+    }
+
+    void setDamage(int d) {
+        damage = d;
     }
 };
 
-class elf : public Human, public Stat
+class elf : public Human, public Stats
 {
-private:
-    int trippleArrows = 45; // damage
 
 public:
-    elf(int h, int d, string n) : Human(n), Stat(h, d)
+    elf(int h, int d, string n) : Human(n), Stats(h, d)
     {
     }
 
@@ -78,7 +80,8 @@ public:
 
     int tripple_arrows()
     {
-        return trippleArrows;
+        getDamage(3);
+        return getDamage();
     }
     const int total_health = getHealth();
 };
@@ -88,10 +91,10 @@ public:
     virtual void display() = 0;
 };
 
-class Goblin : public Stat, public Enemy
+class Goblin : public Stats, public Enemy
 {
 public:
-    Goblin(int h, int d) : Stat(h, d)
+    Goblin(int h, int d) : Stats(h, d)
     {
     }
 
@@ -100,10 +103,10 @@ public:
         cout << " \"We Are Goblins!\" " << endl;
     }
 };
-class Boss : public Stat, public Enemy
+class Boss : public Stats, public Enemy
 {
 public:
-    Boss(int h, int d) : Stat(h, d)
+    Boss(int h, int d) : Stats(h, d)
     {
     }
     void display() override
@@ -305,13 +308,14 @@ void Stage2(int choice, elf &e1) // Stage 2 In Function
 
                     cout << "FINISH HIM" << endl;
                     waitForEnter();
-                    
+
                     cout << "Press 1 To Bring Peace To You Life" << endl;
                     waitForEnter();
 
                     cin >> choice;
 
-                 if(choice == 1){
+                    if (choice == 1)
+                    {
 
                         cout << "AND HERE COMES THE FINAL SHOT!" << endl;
                         waitForEnter();
@@ -323,9 +327,7 @@ void Stage2(int choice, elf &e1) // Stage 2 In Function
                         cout << "\033[1;32m";
                         cout << "GOBLIN KING DEFEATED!" << endl;
                         cout << "\033[0m";
-
-                 }
-
+                    }
                 }
             }
         }
